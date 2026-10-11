@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Navratri Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="openBtn" class="corner-btn" type="button">Contribution check</button>
+
+  <header class="top">
+    <h1>Navratri Collection</h1>
+    <p>Write your name and how much you gave.</p>
+  </header>
+
+  <main>
+    <form id="form" class="card" autocomplete="off">
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="e.g. Rahul" required>
+
+      <label for="amount">Amount (₹)</label>
+      <input id="amount" type="number" min="1" inputmode="numeric" placeholder="e.g. 501" required>
+
+      <button type="submit">Add contribution</button>
+      <p id="msg" class="msg"></p>
+    </form>
+  </main>
+
+  <!-- Contribution check panel -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2>All contributions</h2>
+        <button id="closeBtn" class="close" type="button" aria-label="Close">×</button>
+      </div>
+
+      <div class="total-box">
+        <div>
+          <span class="label">Total collected</span>
+          <strong id="total">₹0</strong>
+        </div>
+        <div>
+          <span class="label">People</span>
+          <strong id="count">0</strong>
+        </div>
+      </div>
+
+      <ul id="list"></ul>
+      <p id="empty" class="empty">No one has added yet.</p>
+
+      <button id="clear" class="ghost" type="button">Clear all</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
